@@ -296,3 +296,37 @@ strong {
 .mav__img {
   margin-top: 40px;
 }
+
+/* ===========================certificate======================= */
+.certificate {
+  min-width: 100vw;
+  padding: 32px 0px;
+  height: 632px;
+}
+
+.cer__heading {
+  position: relative;
+}
+
+.cer__list {
+  margin-top: 44px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /*chia 3 cột các cột đều nhau 1 fr*/
+  gap: 97px;
+}
+
+.cer__item {
+  width: 315px;
+}
+
+.cer__item:hover {
+  border-color: #2e80ce;
+  transition: 0.25s;
+  transform: scale(1.1);
+}
+
+.cer__item--img {
+  width: 100%;
+  height: 446px;
+  object-fit: cover;
+}
