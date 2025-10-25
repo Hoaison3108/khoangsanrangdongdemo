@@ -2,6 +2,13 @@
   box-sizing: border-box;
 }
 
+:root {
+  --font-color1: #ffffff;
+  --primary-color: #0f4f8c;
+  --second-color: #2e80ce;
+  --third-color: #f6fbff;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -9,4 +16,244 @@ html {
 body {
   font-size: 1.6rem;
   font-family: "Open Sans", sans-serif;
+  border: none;
+}
+
+/* ========================common===================== */
+.container {
+  width: 1140px;
+  max-width: calc(100% - 48px);
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.heading-lv2 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 1.38;
+  color: var(--primary-color);
+}
+
+.btn {
+  display: inline-block;
+  min-width: 156px;
+  line-height: 37px;
+  background: var(--second-color);
+  text-align: center;
+  color: var(--font-color1);
+  font-size: 1.6rem;
+  font-weight: 600;
+  border-radius: 999px;
+}
+
+.btn:hover {
+  margin-top: 28px;
+  color: var(--font-color1);
+  background: var(--second-color);
+}
+
+.line-top::after {
+  position: absolute; /*định vị là vị trí con cháu*/
+  left: 0px;
+  display: block;
+  content: "";
+  width: 60px;
+  height: 1px;
+  border-radius: 1px;
+  background: #ff0000;
+}
+
+/* xuống dòng khi có quá 1 hàng */
+.line-clamp {
+  display: -webkit-box; /*kích hoạt mô hình -Webkit-box*/
+  -webkit-line-clamp: var(--line-clamp, 1);
+  /*nếu không có biến truyền vào thì mặc định là 1 dòng*/
+  -webkit-box-orient: vertical; /*xác định mô hình webkit-box theo chiều dọc*/
+  overflow: hidden; /*ẩn nội dung vượt ra khỏi giới hạn phần tử*/
+}
+
+.break-all {
+  word-break: break-all; /*ngắt dòng văn bản đảm bảo không phá vỡ giao diện*/
+}
+
+/* ========================header===================== */
+
+.header {
+  position: sticky;
+  top: 0px;
+  z-index: 1;
+}
+
+.header-top__bg {
+  min-width: 100vw;
+  height: 70px;
+  margin: 0 auto;
+  background: linear-gradient(-45deg, #0f4f8c 68%, #ffffff 50%);
+  position: absolute;
+  border: none;
+}
+
+.header-top {
+  display: flex;
+  position: relative;
+}
+
+.header__logo {
+  padding-top: 12.5px;
+  line-height: 2;
+}
+.navbar {
+  margin-left: 180px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.navbar__list {
+  gap: 35px;
+  display: flex;
+}
+
+.navbar__link,
+.navbar__hotline {
+  color: var(--font-color1);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.navbar__link:hover {
+  color: #ff0004;
+  font-size: 1.3rem;
+}
+
+.navbar__link--active::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--font-color1);
+  position: relative;
+  top: -2px;
+  right: 5px;
+}
+
+.navbar__link--active:hover::before {
+  background: #ff0004;
+}
+
+.navbar__hotline {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+/* ===========================hero======================= */
+
+.hero__image--home {
+  width: 100vw;
+  height: 90vh;
+  object-fit: cover;
+}
+
+/* ========================about us===================== */
+.about-us {
+  min-width: 100vw;
+  background: var(--third-color);
+  padding: 80px 0px;
+}
+
+.about-us--top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about-us__content {
+  width: 45%;
+  height: 372px;
+}
+
+.about-us__heading2 {
+  width: 514px;
+  text-align: justify;
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  line-height: 1.18;
+  margin-top: 15px;
+  position: relative;
+}
+
+.about-us__heading2::after {
+  top: 49px;
+}
+.about-us__desc {
+  text-align: justify;
+  margin-top: 44px;
+  line-height: 1.38;
+}
+
+.line-11 {
+  --line-clamp: 11;
+}
+
+.about-us--seemore {
+  display: flex;
+  width: 156px;
+  line-height: 37px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 28px;
+  color: var(--second-color);
+  background: transparent;
+  border: 1px solid var(--second-color);
+  font-weight: 700;
+}
+
+.icon-right {
+  margin-top: 2px;
+  margin-left: 8px;
+}
+
+.about-us__media {
+  width: 50%;
+}
+
+.about-us--bottom {
+  display: flex;
+  margin-top: 65px;
+}
+
+.about-us__index {
+  display: flex;
+  margin-left: 108px;
+  flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+  gap: 28px;
+}
+
+.about-us__title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #10375c;
+  line-height: 1.38;
+}
+
+span {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #7b7b7b;
+  line-height: 1.3;
+}
+
+strong {
+  font-size: 6.4rem;
+  font-weight: 700;
+  color: #ff0004;
+  line-height: 1.35;
 }
