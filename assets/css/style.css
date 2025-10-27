@@ -36,6 +36,7 @@ a {
   font-weight: 600;
   line-height: 1.38;
   color: var(--primary-color);
+  border: none;
 }
 
 .btn {
@@ -54,6 +55,7 @@ a {
   margin-top: 28px;
   color: var(--font-color1);
   background: var(--second-color);
+  transition: 0.25s;
 }
 
 .line-top::after {
@@ -66,6 +68,13 @@ a {
   height: 1px;
   border-radius: 1px;
   background: #ff0000;
+}
+
+.line-cus::after {
+  left: 50%; /* Đặt vị trí bắt đầu từ giữa */
+  transform: translateX(
+    -50%
+  ); /* Dịch chuyển ngược lại 50% chiều rộng để căn giữa*/
 }
 
 /* xuống dòng khi có quá 1 hàng */
@@ -86,7 +95,7 @@ a {
 .header {
   position: sticky;
   top: 0px;
-  z-index: 1;
+  z-index: 2;
 }
 
 .header-top__bg {
@@ -131,6 +140,7 @@ a {
 .navbar__link:hover {
   color: #ff0004;
   font-size: 1.3rem;
+  transition: 0.25s;
 }
 
 .navbar__link--active::before {
@@ -147,6 +157,7 @@ a {
 
 .navbar__link--active:hover::before {
   background: #ff0004;
+  transition: 0.25s;
 }
 
 .navbar__hotline {
@@ -301,7 +312,7 @@ strong {
 .certificate {
   min-width: 100vw;
   padding: 32px 0px;
-  height: 632px;
+  height: 616px;
 }
 
 .cer__heading {
@@ -320,8 +331,8 @@ strong {
 }
 
 .cer__item:hover {
-  border-color: #2e80ce;
-  transition: 0.25s;
+  border-color: var(--second-color);
+  transition: 0.5s;
   transform: scale(1.1);
 }
 
@@ -329,4 +340,110 @@ strong {
   width: 100%;
   height: 446px;
   object-fit: cover;
+}
+
+/* ===========================business field======================= */
+.business {
+  min-width: 100vw;
+  padding: 59px 0px;
+  height: 613px;
+  background: var(--second-color);
+  background-image: url("./bus-bg.png");
+  background-size: cover; /* Phủ kín toàn bộ khu vực */
+  background-position: center; /* Căn giữa ảnh */
+  background-repeat: no-repeat; /* Không lặp lại ảnh */
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 79, 140, 0.8); /* Màu #0F4F8C với độ mờ 80% */
+  z-index: 0;
+}
+
+/* Đảm bảo nội dung khác không bị che */
+.business > *:not(.overlay) {
+  position: relative;
+  z-index: 1;
+}
+
+.bus__heading {
+  color: var(--font-color1);
+  text-align: center;
+  position: relative;
+}
+
+.bus__desc {
+  text-align: center;
+  line-height: 1.38;
+  color: var(--font-color1);
+  width: 900px;
+  margin: 48px auto 0;
+}
+
+.bus__list {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /*chia 3 cột các cột đều nhau 1 fr*/
+  gap: 30px;
+}
+
+.bus__item {
+  text-align: center;
+  justify-content: center;
+  color: var(--font-color1);
+  position: relative;
+}
+
+.bus__item:hover {
+  color: #ff650c;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.bus__item--img {
+  width: 150px;
+  height: 150px;
+  margin-top: 15px;
+  border-radius: 999px;
+  position: relative;
+}
+.bus__item--title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.38;
+  margin-top: 18px;
+}
+
+.bus__item--desc {
+  font-size: 1.3rem;
+  line-height: 2.15;
+  margin: 21px auto 0; /*căn giữa đối với thẻ inline block có kích thước cố định*/
+  width: 330px;
+  height: 90px;
+}
+
+.line-3 {
+  --line-clamp: 3;
+}
+
+.bus__item--ring {
+  position: absolute;
+  margin: 7px 97px;
+  display: block;
+  content: "";
+  width: 166px;
+  height: 166px;
+  border-radius: 900px;
+  background: transparent;
+  border: 1px solid var(--font-color1);
+}
+
+.bus__item:hover .bus__item--ring {
+  border: 1px solid #ff650c;
+  transition: 0.3s;
 }
