@@ -93,6 +93,10 @@ a {
   --line-clamp: 3;
 }
 
+.line-9 {
+  --line-clamp: 9;
+}
+
 .line-11 {
   --line-clamp: 11;
 }
@@ -636,6 +640,10 @@ strong {
   margin: 0 auto;
 }
 
+.pro__list:hover .pro__item {
+  cursor: pointer;
+}
+
 .pro__item:hover .pro__val-btn--btn {
   background: var(--second-color);
   transition: all 0.5s ease;
@@ -746,6 +754,8 @@ strong {
   color: var(--font-color1);
 }
 
+/* ===========================partner======================= */
+
 .partner {
   min-width: 100vw;
   padding: 80px 0px;
@@ -775,4 +785,67 @@ strong {
   width: 143px;
   height: 126px;
   object-fit: cover;
+}
+
+/* ===========================news======================= */
+
+.news {
+  min-width: 100vw;
+  padding: 32px 0px;
+  height: 700px;
+  background-color: #f6f6f6;
+}
+
+.news__heading {
+  position: relative;
+}
+
+.news__list {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /*chia 2 cột các cột đều nhau 1 fr*/
+  gap: 36px;
+  position: relative;
+}
+
+.new__item {
+  display: flex;
+}
+
+.new__img {
+  width: 356px;
+  height: 252px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.news__content {
+  width: 357px;
+  height: 242px;
+  margin-top: 8px;
+  text-align: justify;
+}
+.news__desc--title {
+  line-height: 1.38;
+}
+
+.news__desc--info {
+  margin-top: 8px;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+.new__desc--color {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #ff650c;
+}
+
+.news__desc--text {
+  font-size: 1.3rem;
+  margin-top: 16px;
+  line-height: 1.38;
+}
+
+.news__list:hover .news__item {
+  cursor: pointer;
 }
