@@ -849,3 +849,63 @@ strong {
 .news__list:hover .news__item {
   cursor: pointer;
 }
+
+/* ===========================footer======================= */
+
+.footer {
+  min-width: 100vw;
+  padding: 80px 0px;
+  height: 550px;
+  /* background-color: #2e80ce; */
+  background-image: url("./foot-bg.png");
+}
+
+/* Đảm bảo nội dung khác không bị che */
+.footer > *:not(.overlay) {
+  position: relative;
+  z-index: 1;
+}
+
+.footer__block {
+  border-bottom: 0.3px solid var(--font-color1);
+  height: 360px;
+}
+.footer__list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__heading {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--font-color1);
+}
+
+.footer__info {
+  margin: 32px 0px; /*top & bot = 32px, left & right = 0px*/
+}
+
+.footer__info--cus {
+  display: flex;
+  margin-top: 19px;
+  align-items: center;
+  gap: 6px;
+  color: var(--font-color1);
+}
+
+.footer__page--info {
+  margin: 32px 0px; /*top & bot = 32px, left & right = 0px*/
+}
+
+.footer__desc--info {
+  margin-top: 25px;
+  line-height: 1.38;
+  color: var(--font-color1);
+  cursor: pointer;
+}
+
+.footer__copyright {
+  margin-top: 36px;
+  text-align: center;
+  color: var(--font-color1);
+}
