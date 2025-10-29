@@ -898,7 +898,7 @@ strong {
 }
 
 .footer__desc--info {
-  margin-top: 25px;
+  margin-top: 16px;
   line-height: 1.38;
   color: var(--font-color1);
   cursor: pointer;
